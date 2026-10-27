@@ -57,14 +57,40 @@ Network diagnostic & monitoring tools and commands
 | `Kismet` | Passive wireless IDS |
 | `wavemon` | Terminal Wi-Fi signal monitor |
 
+## 🧭 Routing & BGP
 
-## ❓ Frequently Asked Questions
+| Tool | Description |
+|---|---|
+| [BGPStream](https://bgpstream.caida.org/) | Live BGP data feed |
+| [RIPE Atlas](https://atlas.ripe.net/) | Global probe network |
+| [bgp.he.net](https://bgp.he.net/) | Hurricane Electric BGP lookup |
+| [PeeringDB](https://www.peeringdb.com/) | Who peers with whom |
+| [FRRouting](https://github.com/FRRouting/frr) | Open-source routing suite |
 
-**What are the best network diagnostic tools?**
+## 🔥 Firewall & Filtering (extras)
 
-tcpdump, mtr, ss, nmap, iperf3, Wireshark and Snitch cover capture, discovery, DNS and bandwidth debugging.
+| Tool | Description |
+|---|---|
+| [pf](https://www.openbsd.org/faq/pf/) | OpenBSD's firewall — the cleanest |
+| [ebtables/nftables](https://netfilter.org/) | Linux native filtering |
+| [Gluetun](https://github.com/qdm12/gluetun) | VPN client container for whole stacks |
 
+## 🧬 Packet Crafting (extras)
+
+| Tool | Description |
+|---|---|
+| [hping3](https://github.com/antirez/hping) | TCP/IP packet assembler |
+| [Yersinia](https://github.com/tomac/yersinia) | L2 protocol attacks |
+| [packeth](https://github.com/jemcek/packETH) | GUI packet builder |
+
+## 📶 Wi-Fi
+
+| Tool | Description |
+|---|---|
+| [aircrack-ng](https://github.com/aircrack-ng/aircrack-ng) | Wi-Fi security suite |
+| [Kismet](https://www.kismetwireless.net/) | Wireless detector/sniffer |
+| [hcxdumptool](https://github.com/ZerBea/hcxdumptool) | Capture for hashcat |
+| [Bettercap](https://github.com/bettercap/bettercap) | The Swiss-army MITM framework |
 
 ---
-
-Maintained by [aixisstudio](https://github.com/aixisstudio) — author of [Snitch](https://github.com/aixisstudio/Snitch), the open-source application firewall. See also: [all resources](https://aixisstudio.github.io).
+Maintained by [aixisstudio](https://github.com/aixisstudio).
