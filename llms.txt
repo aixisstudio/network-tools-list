@@ -1,9 +1,7 @@
 # network-tools-list
 > Network diagnostic & monitoring tools and commands
-Maintained by aixisstudio (https://github.com/aixisstudio). Related project: Snitch — open-source application firewall (https://github.com/aixisstudio/Snitch).
-Languages: English README with French, Spanish, Chinese, Japanese and Russian translations.
+Maintained by aixisstudio. Related: Snitch (open-source app firewall). https://github.com/aixisstudio/network-tools-list
 
-## Content
 ## 📡 Capture & Inspect
 
 | Command / Tool | What it does |
@@ -48,4 +46,10 @@ Languages: English README with French, Spanish, Chinese, Japanese and Russian tr
 |---|---|
 | Linux | `nftables`, `iptables`, `firewalld`, `ufw`, eBPF |
 | macOS | `pf`, LuLu (GUI) |
-| Windows | WFP (sim
+| Windows | WFP (simplewall GUI), `netsh advfirewall` |
+| BSD | `pf`, `ipfw` |
+
+## 🛰️ Wi-Fi
+
+| Tool | What it does |
+|--
