@@ -4,97 +4,95 @@
 
 Инструменты и команды диагностики сети
 
-_Подробное содержимое (списки, ссылки, описания) ведётся на английском — разделы ниже помогут сориентироваться._
+###Захват и проверка
 
-## 📡 Capture & Inspect
-
-| Command / Tool | What it does |
+Командный инструмент / Command Что он делает
 |---|---|
-| `tcpdump -i any -n port 443` | Live packet capture filtered by port |
-| `tshark -i en0 -Y dns` | Wireshark's CLI with display filters |
-| `ngrep -q 'password'` | grep packets as they fly by |
-| [Snitch](https://github.com/aixisstudio/Snitch) | GUI: every connection → process, country, block in one click |
+| `tcpdump -i any -n port 443` | Захват пакетов в реальном времени фильтруется портом |
+| `tshark -i en0 -Y dns` | Wireshark's CLI с фильтрами отображения |
+| `ngrep -q 'password'` | пакеты grep, когда они летают
+| [Snitch] (https://github.com/aixisstudio/Snitch) | GUI: каждое соединение → процесс, страна, блок в один клик |
 
-## 🔎 Discover
+##   Открытие
 
-| Command / Tool | What it does |
+Командный инструмент / Command Что он делает
 |---|---|
-| `nmap -sV -O 192.168.1.0/24` | Service + OS detection on a subnet |
-| `arp-scan -l` | List every device on the LAN |
-| `mtr -n 8.8.8.8` | traceroute + ping combined, live |
-| `ss -tulpn` | Who's listening & who's talking (socket stats) |
-| `lsof -i -P -n` | Process → connection mapping |
+| `nmap -sV -O 192.168.1.0/24` | Обнаружение службы + ОС в подсети |
+`arp-scan -l` Перечислите все устройства в локальной сети
+| `mtr -n 8.8.8.8` | traceroute + ping Combined, live |
+`ss -tulpn` Кто слушает и кто говорит (статистика сокетов)
+| `lsof -i -P -n` | Процесс отображения соединения |
 
-## 🌐 DNS
+##   DNS
 
-| Command | What it does |
+Командир! Что он делает
 |---|---|
-| `dig +short example.com` | Quick A/AAAA lookup |
-| `dig @1.1.1.1 example.com ANY` | Query a specific resolver |
-| `doggo example.com` | Modern human-friendly dig |
-| `resolvectl flush-caches` | Clear the systemd DNS cache |
+| `dig +short example.com` | Быстрый поиск A/AAAA
+| `dig @1.1.1.1 example.com ANY` | Запрос конкретного решателя |
+| `doggo example.com` | Современные дружественные к человеку раскопки
+| `resolvectl flush-caches` | Очистить системный кэш DNS |
 
-## 📊 Measure & Debug
+##  Measure Мера и отладка
 
-| Command / Tool | What it does |
+Командный инструмент / Command Что он делает
 |---|---|
-| `iperf3 -c server` | Throughput between two hosts |
-| `mtr`, `pathping` (Win) | Path latency per hop |
-| `bandwhich` | Per-process bandwidth usage |
-| `iftop` / `nethogs` | Live interface/process traffic |
-| `curl -w '@timing.txt'` | Per-request latency breakdown |
+| `iperf3 -c server` | Пропускная способность между двумя узлами |
+| `mtr`, `pathping` (Win) | Задержка пути на прыжок |
+| `bandwhich` | Использование полосы пропускания для каждого процесса |
+| `iftop`/`nethogs` | Живой интерфейс/процессный трафик
+| `curl -w '@timing.txt'` | Разбивка задержки по запросу |
 
-## 🔥 Firewalling (per OS)
+## ) Firewalling (для ОС)
 
-| OS | Stack |
+| OS | Stack
 |---|---|
-| Linux | `nftables`, `iptables`, `firewalld`, `ufw`, eBPF |
-| macOS | `pf`, LuLu (GUI) |
-| Windows | WFP (simplewall GUI), `netsh advfirewall` |
-| BSD | `pf`, `ipfw` |
+Linux, `nftables`, `iptables`, `firewalld`, `ufw`, eBPF
+| macOS | `pf`, LuLu (GUI)
+Windows | WFP (simplewall GUI), `netsh advfirewall`
+BSD, `pf`, `ipfw`
 
-## 🛰️ Wi-Fi
+##  ️ Wi-Fi
 
-| Tool | What it does |
+Инструмент Что он делает
 |---|---|
-| `aircrack-ng` suite | Capture, inject, audit 802.11 |
-| `Kismet` | Passive wireless IDS |
-| `wavemon` | Terminal Wi-Fi signal monitor |
+| `aircrack-ng` suite | Захват, инъекция, аудит 802.11 |
+`Kismet` Пассивная беспроводная IDS
+| `wavemon` | Терминальный монитор сигналов Wi-Fi |
 
-## 🧭 Routing & BGP
+## out Маршрутизация и BGP
 
-| Tool | Description |
+| Инструмент | Описание
 |---|---|
-| [BGPStream](https://bgpstream.caida.org/) | Live BGP data feed |
-| [RIPE Atlas](https://atlas.ripe.net/) | Global probe network |
-| [bgp.he.net](https://bgp.he.net/) | Hurricane Electric BGP lookup |
-| [PeeringDB](https://www.peeringdb.com/) | Who peers with whom |
-| [FRRouting](https://github.com/FRRouting/frr) | Open-source routing suite |
+[BGPStream] (https://bgpstream.caida.org/) | Live BGP data feed |
+[RIPE Atlas] (https://atlas.ripe.net/) | Глобальная зондовая сеть
+[bgp.he.net] (https://bgp.he.net/) | Ураган Электрический поиск BGP
+[PeeringDB] (https://www.peeringdb.com/) Кто с кем дружит
+| [FRRouting] (https://github.com/FRRouting/frr) | Комплект маршрутизации с открытым исходным кодом |
 
-## 🔥 Firewall & Filtering (extras)
+Firewall & Filtering (дополнение)
 
-| Tool | Description |
+| Инструмент | Описание
 |---|---|
-| [pf](https://www.openbsd.org/faq/pf/) | OpenBSD's firewall — the cleanest |
-| [ebtables/nftables](https://netfilter.org/) | Linux native filtering |
-| [Gluetun](https://github.com/qdm12/gluetun) | VPN client container for whole stacks |
+[pf](https://www.openbsd.org/faq/pf/) | брандмауэр OpenBSD — самый чистый |
+| [ebtables/nftables] (https://netfilter.org/) | Нативная фильтрация Linux
+| [Gluetun] (https://github.com/qdm12/gluetun) | Контейнер клиента VPN для целых стеков |
 
-## 🧬 Packet Crafting (extras)
+## ) Пакетное ремесло (дополнительные)
 
-| Tool | Description |
+| Инструмент | Описание
 |---|---|
-| [hping3](https://github.com/antirez/hping) | TCP/IP packet assembler |
-| [Yersinia](https://github.com/tomac/yersinia) | L2 protocol attacks |
-| [packeth](https://github.com/jemcek/packETH) | GUI packet builder |
+| [hping3](https://github.com/antirez/hping) | TCP/IP пакетный ассемблер |
+[Yersinia] (https://github.com/tomac/yersinia) | Атаки протокола L2
+| [пакет] (https://github.com/jemcek/packETH) | сборщик пакетов GUI |
 
-## 📶 Wi-Fi
+##   Wi-Fi
 
-| Tool | Description |
+| Инструмент | Описание
 |---|---|
-| [aircrack-ng](https://github.com/aircrack-ng/aircrack-ng) | Wi-Fi security suite |
-| [Kismet](https://www.kismetwireless.net/) | Wireless detector/sniffer |
-| [hcxdumptool](https://github.com/ZerBea/hcxdumptool) | Capture for hashcat |
-| [Bettercap](https://github.com/bettercap/bettercap) | The Swiss-army MITM framework |
+| [aircrack-ng] (https://github.com/aircrack-ng/aircrack-ng) | Комплект безопасности Wi-Fi |
+[Kismet] (https://www.kismetwireless.net/) | Беспроводной детектор / сниффер
+[hcxdumptool] (https://github.com/ZerBea/hcxdumptool) | Захват для хэшката |
+[Bettercap] (https://github.com/bettercap/bettercap) | Структура MITM швейцарской армии
 
 ---
 ## Участие
