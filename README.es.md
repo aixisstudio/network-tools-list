@@ -4,97 +4,95 @@
 
 Herramientas y comandos de diagnóstico de red
 
-_El contenido detallado (listas, enlaces, descripciones) está en inglés por mantenibilidad — las secciones siguientes te guían._
+## 📡 Capture &amp; Inspect
 
-## 📡 Capture & Inspect
-
-| Command / Tool | What it does |
+Mando / Herramienta permanente Lo que hace
 |---|---|
-| `tcpdump -i any -n port 443` | Live packet capture filtered by port |
-| `tshark -i en0 -Y dns` | Wireshark's CLI with display filters |
-| `ngrep -q 'password'` | grep packets as they fly by |
-| [Snitch](https://github.com/aixisstudio/Snitch) | GUI: every connection → process, country, block in one click |
+Silencio `tcpdump -i any -n port 443` Silencio Captura de paquete en vivo filtrado por port Silencio
+CLI de Wireshark con filtros de pantalla Silencio
+Silencio `ngrep -q 'password'` Silencioso paquetes de grep mientras vuelan por
+Silencio [Snitch] (https://github.com/aixisstudio/Snitch) Silencio GUI: cada conexión → proceso, país, bloque en un solo clic
 
-## 🔎 Discover
+Descubrir
 
-| Command / Tool | What it does |
+Mando / Herramienta permanente Lo que hace
 |---|---|
-| `nmap -sV -O 192.168.1.0/24` | Service + OS detection on a subnet |
-| `arp-scan -l` | List every device on the LAN |
-| `mtr -n 8.8.8.8` | traceroute + ping combined, live |
-| `ss -tulpn` | Who's listening & who's talking (socket stats) |
-| `lsof -i -P -n` | Process → connection mapping |
+← `nmap -sV -O 192.168.1.0/24` Silencioso Servicio + Detección del sistema operativo en una subnet
+← `arp-scan -l` Silencio Listar todos los dispositivos en la LAN
+Silencio `mtr -n 8.8.8.8` Silencioso trazador + ping combinado, vivo
+Silencio `ss -tulpn` Silencio ¿Quién está escuchando?
+Silencio `lsof -i -P -n` Silencio Proceso → cartografía de la conexión
 
 ## 🌐 DNS
 
-| Command | What it does |
+Silencio Lo que hace
 |---|---|
-| `dig +short example.com` | Quick A/AAAA lookup |
-| `dig @1.1.1.1 example.com ANY` | Query a specific resolver |
-| `doggo example.com` | Modern human-friendly dig |
-| `resolvectl flush-caches` | Clear the systemd DNS cache |
+Silencio `dig +short example.com` Silencio Quick A/AAAA lookup
+Silencio `dig @1.1.1.1 example.com ANY` Silencio Query a specific resolve Silencio
+Silencio `doggo example.com`
+Silencio `resolvectl flush-caches` Silencio Limpiar el sistema DNS cache ANTE
 
-## 📊 Measure & Debug
+## 📊 Measure &gt; Debug
 
-| Command / Tool | What it does |
+Mando / Herramienta permanente Lo que hace
 |---|---|
-| `iperf3 -c server` | Throughput between two hosts |
-| `mtr`, `pathping` (Win) | Path latency per hop |
-| `bandwhich` | Per-process bandwidth usage |
-| `iftop` / `nethogs` | Live interface/process traffic |
-| `curl -w '@timing.txt'` | Per-request latency breakdown |
+Silencio `iperf3 -c server` TENIDO A través de la comunicación entre dos anfitriones
+← `mtr`, `pathping` (Win)
+Silencio `bandwhich` Silencio Uso de ancho de banda por proceso
+← `iftop` / `nethogs`
+Silencio `curl -w '@timing.txt'`
 
 ## 🔥 Firewalling (per OS)
 
-| OS | Stack |
+Silencioso sistema operativo
 |---|---|
-| Linux | `nftables`, `iptables`, `firewalld`, `ufw`, eBPF |
-| macOS | `pf`, LuLu (GUI) |
-| Windows | WFP (simplewall GUI), `netsh advfirewall` |
-| BSD | `pf`, `ipfw` |
+TEN Linux ANTE `nftables`, `iptables`, `firewalld`, `ufw`, eBPF ANTE
+TENIDO macOS TENIDO `pf`, LuLu (GUI)
+← Windows ← PMA (simplewall GUI), `netsh advfirewall`
+← BSD   `pf`, `ipfw`
 
-## 🛰️ Wi-Fi
+Wi-Fi
 
-| Tool | What it does |
+← Herramienta permanente Lo que hace
 |---|---|
-| `aircrack-ng` suite | Capture, inject, audit 802.11 |
-| `Kismet` | Passive wireless IDS |
-| `wavemon` | Terminal Wi-Fi signal monitor |
+← `aircrack-ng` suite ¦ Capture, inyect, auditar 802.11
+Silencio `Kismet`
+Silencio `wavemon` Silencio Terminal Monitor de señal Wi-Fi Silencio
 
-## 🧭 Routing & BGP
+## 🧭 Routing &gt; BGP
 
-| Tool | Description |
+← Herramienta Silencioso
 |---|---|
-| [BGPStream](https://bgpstream.caida.org/) | Live BGP data feed |
-| [RIPE Atlas](https://atlas.ripe.net/) | Global probe network |
-| [bgp.he.net](https://bgp.he.net/) | Hurricane Electric BGP lookup |
-| [PeeringDB](https://www.peeringdb.com/) | Who peers with whom |
-| [FRRouting](https://github.com/FRRouting/frr) | Open-source routing suite |
+Silencio [BGPStream] (https://bgpstream.caida.org/)
+confidencialidad [RIPE Atlas] (https://atlas.ripe.net/)
+[bgp.he.net] (https://bgp.he.net/)
+[PeeringDB] (https://www.peeringdb.com/) ¿Quiénes son los compañeros con quienes vivieron?
+Silencio [FRRouting] (https://github.com/FRRouting/frr)
 
-## 🔥 Firewall & Filtering (extras)
+## 🔥 Firewall &amp; Filtering (extras)
 
-| Tool | Description |
+← Herramienta Silencioso
 |---|---|
-| [pf](https://www.openbsd.org/faq/pf/) | OpenBSD's firewall — the cleanest |
-| [ebtables/nftables](https://netfilter.org/) | Linux native filtering |
-| [Gluetun](https://github.com/qdm12/gluetun) | VPN client container for whole stacks |
+Silencio [pf] (https://www.openbsd.org/faq/pf/)
+(https://netfilter.org/)
+[Gluetun] (https://github.com/qdm12/gluetun) Silencioso VPN cliente contenedor para pilas enteras
 
 ## 🧬 Packet Crafting (extras)
 
-| Tool | Description |
+← Herramienta Silencioso
 |---|---|
-| [hping3](https://github.com/antirez/hping) | TCP/IP packet assembler |
-| [Yersinia](https://github.com/tomac/yersinia) | L2 protocol attacks |
-| [packeth](https://github.com/jemcek/packETH) | GUI packet builder |
+[hping3] (https://github.com/antirez/hping)
+Silencio [Yersinia] (https://github.com/tomac/yersinia)
+[paquete] (https://github.com/jemcek/packETH)
 
 ## 📶 Wi-Fi
 
-| Tool | Description |
+← Herramienta Silencioso
 |---|---|
-| [aircrack-ng](https://github.com/aircrack-ng/aircrack-ng) | Wi-Fi security suite |
-| [Kismet](https://www.kismetwireless.net/) | Wireless detector/sniffer |
-| [hcxdumptool](https://github.com/ZerBea/hcxdumptool) | Capture for hashcat |
-| [Bettercap](https://github.com/bettercap/bettercap) | The Swiss-army MITM framework |
+Silencio [aircrack-ng] (https://github.com/aircrack-ng/aircrack-ng)
+Silencio [Kismet] (https://www.kismetwireless.net/)
+[hcxdumptool] (https://github.com/ZerBea/hcxdumptool)
+Silencio [Bettercap] (https://github.com/bettercap/bettercap)
 
 ---
 ## Contribuir
