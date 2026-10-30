@@ -4,97 +4,95 @@
 
 Outils et commandes de diagnostic et monitoring réseau
 
-_Le contenu détaillé (listes, liens, descriptions) est en anglais pour rester maintenable — les sections ci-dessous te guident._
+Capture et inspection
 
-## 📡 Capture & Inspect
-
-| Command / Tool | What it does |
+Commande / Outil Ce qu'il fait
 |---|---|
-| `tcpdump -i any -n port 443` | Live packet capture filtered by port |
-| `tshark -i en0 -Y dns` | Wireshark's CLI with display filters |
-| `ngrep -q 'password'` | grep packets as they fly by |
-| [Snitch](https://github.com/aixisstudio/Snitch) | GUI: every connection → process, country, block in one click |
+`tcpdump -i any -n port 443`: capture de paquets en direct filtrée par le port
+CLI de Wireshark avec filtres d'affichage
+Les paquets de grep `ngrep -q 'password'`
+[Snitch](https://github.com/aixisstudio/Snitch)=GUI: chaque connexion → processus, pays, bloquer en un seul clic=
 
-## 🔎 Discover
+Découvrir
 
-| Command / Tool | What it does |
+Commande / Outil Ce qu'il fait
 |---|---|
-| `nmap -sV -O 192.168.1.0/24` | Service + OS detection on a subnet |
-| `arp-scan -l` | List every device on the LAN |
-| `mtr -n 8.8.8.8` | traceroute + ping combined, live |
-| `ss -tulpn` | Who's listening & who's talking (socket stats) |
-| `lsof -i -P -n` | Process → connection mapping |
+Service + détection d'OS sur un sous-réseau
+`arp-scan -l`. Lister tous les appareils sur le LAN.
+`mtr -n 8.8.8.8`=Ligneroute + ping combiné, live=
+Qui écoute et qui parle (statistiques de poche)
+Processus de `lsof -i -P -n`
 
-## 🌐 DNS
+DNS
 
-| Command | What it does |
+Commandement Ce qu'il fait
 |---|---|
-| `dig +short example.com` | Quick A/AAAA lookup |
-| `dig @1.1.1.1 example.com ANY` | Query a specific resolver |
-| `doggo example.com` | Modern human-friendly dig |
-| `resolvectl flush-caches` | Clear the systemd DNS cache |
+Recherche rapide A/AAAA
+`dig @1.1.1.1 example.com ANY`: Interroger un résolveur spécifique
+`doggo example.com`
+Effacer le cache DNS systemd
 
-## 📊 Measure & Debug
+Mesure et débogage
 
-| Command / Tool | What it does |
+Commande / Outil Ce qu'il fait
 |---|---|
-| `iperf3 -c server` | Throughput between two hosts |
-| `mtr`, `pathping` (Win) | Path latency per hop |
-| `bandwhich` | Per-process bandwidth usage |
-| `iftop` / `nethogs` | Live interface/process traffic |
-| `curl -w '@timing.txt'` | Per-request latency breakdown |
+`iperf3 -c server`=Traitement entre deux hôtes
+Latence par houblon
+Utilisation de la bande passante par processus
+`iftop` / `nethogs`
+`curl -w '@timing.txt'`
 
-## 🔥 Firewalling (per OS)
+Pare-feu (par OS)
 
-| OS | Stack |
+O.S. Empilement
 |---|---|
-| Linux | `nftables`, `iptables`, `firewalld`, `ufw`, eBPF |
-| macOS | `pf`, LuLu (GUI) |
-| Windows | WFP (simplewall GUI), `netsh advfirewall` |
-| BSD | `pf`, `ipfw` |
+Linux, `nftables`, `iptables`, `firewalld`, `ufw`, eBPF
+`pf`, LuLu (GUI)
+Fenêtres du PAM (interface graphique simple), `netsh advfirewall`
+CdPH0X, CdPH1X
 
-## 🛰️ Wi-Fi
+Wi-Fi
 
-| Tool | What it does |
+Outil Ce qu'il fait
 |---|---|
-| `aircrack-ng` suite | Capture, inject, audit 802.11 |
-| `Kismet` | Passive wireless IDS |
-| `wavemon` | Terminal Wi-Fi signal monitor |
+Capturer, injecter, vérifier 802.11
+IDS sans fil passif
+`wavemon`-L'écran de signal Wi-Fi terminal
 
-## 🧭 Routing & BGP
+Routage et BGP
 
-| Tool | Description |
+Description de l'outil
 |---|---|
-| [BGPStream](https://bgpstream.caida.org/) | Live BGP data feed |
-| [RIPE Atlas](https://atlas.ripe.net/) | Global probe network |
-| [bgp.he.net](https://bgp.he.net/) | Hurricane Electric BGP lookup |
-| [PeeringDB](https://www.peeringdb.com/) | Who peers with whom |
-| [FRRouting](https://github.com/FRRouting/frr) | Open-source routing suite |
+[BGPStream](https://bgpstream.caida.org/) (Feed de données BGP en direct)
+Réseau de sonde mondial
+[bgp.he.net](https://bgp.he.net/)
+[PeeringDB] (https://www.peeringdb.com/) Avec qui?
+[FRRouting](https://github.com/FRRouting/frr)
 
-## 🔥 Firewall & Filtering (extras)
+Pare-feu et filtrage (extras)
 
-| Tool | Description |
+Description de l'outil
 |---|---|
-| [pf](https://www.openbsd.org/faq/pf/) | OpenBSD's firewall — the cleanest |
-| [ebtables/nftables](https://netfilter.org/) | Linux native filtering |
-| [Gluetun](https://github.com/qdm12/gluetun) | VPN client container for whole stacks |
+Le pare-feu d'OpenBSD — le plus propre
+[Ebtables/nftables](https://netfilter.org/)
+[Gluetun](https://github.com/qdm12/gluetun)
 
-## 🧬 Packet Crafting (extras)
+Fabrication de paquets (extras)
 
-| Tool | Description |
+Description de l'outil
 |---|---|
-| [hping3](https://github.com/antirez/hping) | TCP/IP packet assembler |
-| [Yersinia](https://github.com/tomac/yersinia) | L2 protocol attacks |
-| [packeth](https://github.com/jemcek/packETH) | GUI packet builder |
+[hping3] (https://github.com/antirez/hping)
+[Yersinia] (https://github.com/tomac/yersinia)
+[packeth](https://github.com/jemcek/packETH)
 
-## 📶 Wi-Fi
+Wi-Fi
 
-| Tool | Description |
+Description de l'outil
 |---|---|
-| [aircrack-ng](https://github.com/aircrack-ng/aircrack-ng) | Wi-Fi security suite |
-| [Kismet](https://www.kismetwireless.net/) | Wireless detector/sniffer |
-| [hcxdumptool](https://github.com/ZerBea/hcxdumptool) | Capture for hashcat |
-| [Bettercap](https://github.com/bettercap/bettercap) | The Swiss-army MITM framework |
+Suite de sécurité Wi-Fi
+[Kismet] (https://www.kismetwireless.net/)
+[hcxdumptool](https://github.com/ZerBea/hcxdumptool)= Capture pour le haschcat=
+[Bettercap] (https://github.com/bettercap/bettercap)Le cadre MITM Swiss-army
 
 ---
 ## Contribuer
